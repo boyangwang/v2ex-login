@@ -9,7 +9,7 @@ plan.target('staging', {
 });
 const gitDir = `/var/www/${packageJson.name}`;
 plan.remote(['clean-deploy', 'deploy', 'start'], (remote) => {
-    remote.sudo(`npm --prefix ${gitDir} stop`, { failsafe: true });
+    remote.sudo(`cd ${gitDir} && npm --prefix ${gitDir} stop`, { failsafe: true });
 });
 plan.remote(['clean-deploy'], (remote) => {
     remote.rm(`-rf -- ${gitDir}`);
@@ -20,5 +20,5 @@ plan.remote(['clean-deploy', 'deploy'], (remote) => {
     remote.sudo(`npm --prefix ${gitDir} run full-build`);
 });
 plan.remote(['clean-deploy', 'deploy', 'start'], (remote) => {
-    remote.sudo(`npm --prefix ${gitDir} start`);
+    remote.sudo(`cd ${gitDir} && npm --prefix ${gitDir} start`);
 });
