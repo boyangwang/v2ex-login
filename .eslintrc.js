@@ -18,14 +18,15 @@ module.exports = {
         'indent': ['error', 4],
         'react/prefer-stateless-function': 'off',
         'class-methods-use-this': 'off',
-        'max-len': ['error', {'code': 120, 'comments': 120}],
+        'max-len': ['error', {'code': 120, 'comments': 120, "ignoreStrings": true, "ignoreTemplateLiterals": true}],
         'arrow-body-style': 'off',
         'no-fallthrough': 'off',
         'linebreak-style': 'off',
         'no-param-reassign': ['error', {'props': false}],
         'consistent-return': 'off',
         'no-plusplus': 'off',
-        'no-use-before-define': ['error', { 'functions': false, 'classes': false }]
+        'no-use-before-define': ['error', { 'functions': false, 'classes': false }],
+        'quote-props': 'off'
     },
     'parserOptions': {
         'ecmaVersion': 6,
