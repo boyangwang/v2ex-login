@@ -5,8 +5,8 @@
   "main": "server/app.js",
   "scripts": {
     "full-build": "npm install && npm run eslint-all",
-    "start": "forever start -c 'node --use-strict' -a -l ./node-boilerplate.log -o ./node-boilerplate.log -e ./node-boilerplate.log --uid node-boilerplate server/app.js",
-    "stop": "forever stop node-boilerplate || true",
+    "start": "forever start -c 'node --use-strict' -a -l ./v2ex-login.log -o ./v2ex-login.log -e ./v2ex-login.log --uid v2ex-login server/app.js",
+    "stop": "forever stop v2ex-login || true",
     "eslint": "node ./node_modules/eslint/bin/eslint.js --fix",
     "eslint-all": "node ./node_modules/eslint/bin/eslint.js --fix .",
     "deploy-staging": "fly deploy:staging",
